@@ -34,9 +34,9 @@ Shiny App
 
 Shiny is a web application framework for R. This application was done using Shiny thus we call it a Shiny App. The following are the basic requirements for this app to work.
 
-1. The associated supporting documentations that the user needs to get started in using the application is included in the app itself.
+1. The associated supporting documentations that the user needs to get started in using the application will be included in the app itself.
 2. The application will be deployed in Rstudio's shiny server.
-3. The application codes which includes the server.R and ui.R code and other necessary files for it to run will be posted in Github.
+3. The application codes which includes the server.R and ui.R code and other necessary files for it to run will be posted in [Github](https://github.com/ericfruelda/Developing-Data-Products.git).
 
 The Multivariate Regression Analysis Prediction Model
 ========================================================

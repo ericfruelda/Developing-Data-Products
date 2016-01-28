@@ -128,8 +128,6 @@ testing &lt;- data[c(301:400), ]</code></pre>
 <div id="fitting-multivariate-linear-regression-model" class="section level3">
 <h3>Fitting Multivariate Linear Regression Model</h3>
 <p>Using the lm function to fit multivariate linear regression model.</p>
-<pre class="r"><code>fitmodel &lt;- lm(Default_Outcomes~.,training)
-print(fitmodel) # Displaying model</code></pre>
 <pre><code>## 
 ## Call:
 ## lm(formula = Default_Outcomes ~ ., data = training)
@@ -145,7 +143,6 @@ print(fitmodel) # Displaying model</code></pre>
 <div id="testing-model" class="section level3">
 <h3>Testing Model</h3>
 <p>The resulting model is evaluated using the testing set splitted in the beginning. A confusion matrix is provided with the testing set to evaluate accuracy of the model.</p>
-<pre class="r"><code>confusionMatrix(testing$Default_Outcomes,round(predict(fitmodel,testing)))</code></pre>
 <pre><code>## Confusion Matrix and Statistics
 ## 
 ##           Reference
@@ -181,7 +178,7 @@ print(fitmodel) # Displaying model</code></pre>
 </div>
 <div id="source-of-data-and-further-reading" class="section level2">
 <h2>Source of Data and Further Reading</h2>
-<p>For further reading, please read the document “Information on Credit Card Customer Data” that comes along with this analysis.</p>
+<p>For further reading, please read the document “Information on Credit Card Customer Data” that comes along with this analysis. This document along with the data file is available in <a href="https://github.com/ericfruelda/Developing-Data-Products.git">Github</a>.</p>
 </div>
 
 

@@ -7,10 +7,10 @@ author: "Eric Fruelda"
 ###Welcome to the Credit Card Defaulter Predictor App!
 ***
 
-This app was developed for the Developing Data Products Course from Coursera. The main objective for this app is to predict if a credit card applicant will be a defaulter in the future given his/her current financial status. The app uses a multivariate regression analysis model from 400 cases of credit card customers with default and non-default outcomes. This data is not available in the R datasets package so a copy of the file in csv format and some useful information about the data is included in Github.
+This app was developed for the Developing Data Products Course from Coursera. The main objective for this app is to predict if a credit card applicant will be a defaulter in the future given his/her current financial status. The app uses a multivariate regression analysis model from 400 cases of credit card customers with default and non-default outcomes. This data is not available in the R datasets package so a copy of the file in csv format and some useful information about the data is included in [Github](https://github.com/ericfruelda/Developing-Data-Products.git).
 
 The user needs to input the required information in the left side of the page. The default values have been entered and needs to be changed by the user. The limits of the values that can be entered are specified to guide the user in entering the correct data. The submit button will run the application and display the result of the prediction.
 
 In the main page, the user will be able to view the outcome of the prediction in the Results tab. There is also a Plot tab where the user can see the plot of the Residual Plots for the model that was used in the prediction. The Analysis tab displays the analysis that was created in creating the multivariate regression model.
 
-The source code for "ui.R" and "server.R" files are also available in GitHub.
+The source code for "ui.R" and "server.R" files are also available in [GitHub](https://github.com/ericfruelda/Developing-Data-Products.git).
