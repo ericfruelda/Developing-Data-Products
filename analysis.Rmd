@@ -1,0 +1,79 @@
+---
+title: "Credit Card Defaulter Prediction Model Analysis"
+author: "Eric Fruelda"
+date: "Thursday, January 28, 2016"
+output: html_document
+---
+
+##About this Analysis
+
+This analysis uses a dataset of 400 cases of credit card customers with default and non-default outcomes. This document provides the detailed procedure in the creation of a prediction model using multivariate linear regression for predicting future defaulters and the corresponding analysis for the model.
+
+##Dataset
+
+The dataset contains 400 credit card customers with 100 defaulters and 300 non-defaulters. There are six pieces of information that were provided for each customer:
+
++ Age
++ Years at current employer
++ Years at current address
++ Income over the past year
++ Current credit card debt
++ Current automobile debt.
+
+The first column corresponds to the unique identifier "Unique.ID" for each customer and the last column corresponds to the outcome; 1 for default and 0 for non-default.
+
+##Methodology
+
+The following steps were done for this project:
+
+1. Data Processing
+    + Load the data.
+    + Clean the data.
+    + Split the data.
+2. Building the Model
+    + Fit a multivariate linear regression model.
+    + Test the model.
+
+##STEP 1. Data Processing
+
+###Loading Data
+Loading libraries and dataset.
+```{r loaddata, echo=TRUE, results='hide'}
+library(caret )
+data <- read.csv("data.csv", header = TRUE)
+```
+
+###Data Cleaning
+Selecting useful variables by leaving out the "Unique.ID" column.
+```{r cleandata, echo=TRUE, results='hide'}
+data<-data[,c(2:8)]
+```
+
+###Splitting Data
+Spliting the training data to 75% training set using the first 300 cases and 25% testing set using the remaining 100 cases.
+```{r splitdata, echo=TRUE, results='hide'}
+training <- data[c(1:300), ] 
+testing <- data[c(301:400), ]
+```
+
+##STEP 2. Building the Model
+
+###Fitting Multivariate Linear Regression Model
+Using the lm function to fit multivariate linear regression model.
+```{r fitLM, echo=TRUE}
+fitmodel <- lm(Default_Outcomes~.,training)
+print(fitmodel) # Displaying model
+```
+
+###Testing Model
+The resulting model is evaluated using the testing set splitted in the beginning. A confusion matrix is provided with the testing set to evaluate accuracy of the model.
+```{r testLM, echo=TRUE}
+confusionMatrix(testing$Default_Outcomes,round(predict(fitmodel,testing)))
+```
+The model had an overall accuracy of 0.83, or 83% at 95% CI:(0.7418, 0.8977). Therefore, the out-of-sample error rate was 0.17, or 17%.
+
+## Discussions
+In this analysis, 75% of the data were used to build a model by multivariate linear regression with the remaining 25% used for model testing. The model statistics by class showed that the built model had the overall accuracy of 83% for the testing set. The out-of-sample error rate was 17%. The sensitivity was 82.61% and the specificity was 87.5%. With an accuracy above 83% on our cross-validation data, we can expect that 4 out of 5 customers can be accurately predicted whether to be a future defaulter or not.
+
+## Source of Data and Further Reading
+For further reading, please read the document "Information on Credit Card Customer Data" that comes along with this analysis.
