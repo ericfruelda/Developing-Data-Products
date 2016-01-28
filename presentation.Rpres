@@ -5,6 +5,7 @@ date: Thursday, January 28, 2016
 transition: rotate
 font-family: arial
 
+Click [HERE](https://ericfruelda.shinyapps.io/Developing-Data-Products/) to launch the App!
 
 Welcome to the Credit Card Defaulter Predictor App!
 ========================================================
